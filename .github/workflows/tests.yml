@@ -1,0 +1,24 @@
+name: tests
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: install
+        run: make install
+      - name: build
+        run: make build
+      - name: run test
+        run: make test
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: install
+        run: make install
+      - name: build
+        run: make build
+      - name: run lint
+        run: make lint
+
